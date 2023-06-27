@@ -13,7 +13,7 @@ const DentistContextProvider = (props) => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('API_ENDPOINT'); // Reemplaza 'API_ENDPOINT' con la URL de la API real
+      const response = await axios.get(`https://jsonplaceholder.typicode.com/users`); // Reemplaza 'API_ENDPOINT' con la URL de la API real
       setDentists(response.data);
     } catch (error) {
       console.error('Error fetching data from API:', error);

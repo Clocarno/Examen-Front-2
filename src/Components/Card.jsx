@@ -1,14 +1,25 @@
 import React from "react";
 import dentistImage from '../images/doctor.jpg';
+import { Link } from 'react-router-dom';
 
 const Card = ({ name, username, id }) => {
 
   const addFav = ()=>{
     // Aqui iria la logica para agregar la Card en el localStorage
   }
+ 
+  
+  
+
+
+
+
+
 
   return (
-    <div className="card">
+
+    <Link to={`/dentist/${id}`}>
+    <div className="card" >
         <div>
           <img  src={dentistImage} alt="Dentist" className="card-image"/>
         </div>
@@ -25,6 +36,7 @@ const Card = ({ name, username, id }) => {
 
         <button onClick={addFav} className="favButton">Add fav</button>
     </div>
+    </Link>
   );
 };
 

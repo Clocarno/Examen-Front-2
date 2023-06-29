@@ -13,6 +13,7 @@ const Home = () => {
       <h1>Home</h1>
       <div className='card-grid'>
       {dentists.map(dentist => (
+         
         <Card 
            name={dentist.name}
            username={dentist.username}

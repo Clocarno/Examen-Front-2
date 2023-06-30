@@ -1,3 +1,10 @@
+
+*{
+  margin: 0;
+  
+  
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -13,10 +20,27 @@ code {
 }
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
+  color: #fff;
   padding: 10px;
   border: none;
   width: 100%;
   cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.favButton:hover {
+  background-color: #999797;
+  color: #333;
+}
+
+.favButton:hover .card_star {
+  color: #333;
+}
+
+.card_star{
+  
+  color: gold;
+
 }
 
 h1{
@@ -25,9 +49,29 @@ h1{
 
 nav{
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
+  width: 100%;
+  justify-content: space-around;
   padding: 1rem;
+  background-color: bisque;
+}
+.nav_icons{
+
+  display: flex;
+  align-items: center;
+}
+
+.nav_button{
+
+  
+  max-height:  40px;
+  margin-left: 20px;
+}
+
+.nav_style{
+
+  height: 30px;
+  margin-left: 20px;
+  cursor: pointer;
 }
 
 a{
@@ -47,9 +91,10 @@ footer {
   padding: 2rem;
   position: relative;
   bottom: 0;
-  width: 90%;
+  width: 100%;
   height: 40px;
-  margin-top: 2rem;
+ 
+ 
 }
 
 footer > img{
@@ -104,7 +149,56 @@ form{
   width: 300px;
   height: 100px;
   margin: 0 auto;
+  
 }
+
+.form-container {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.form-field {
+  margin-bottom: 20px;
+}
+.form_menssage{
+
+  margin-top: 50px;
+  background-color: white;
+}
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"] {
+  padding: 8px;
+  width: 100%;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.error,
+.success {
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
 
 .card{
   display: flex;
@@ -120,6 +214,13 @@ form{
   border: 0.5px solid rgb(206, 217, 142);
 }
 
+.init{
+
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-left: 10px;
+}
+
 .card-grid{
   display: flex;
   justify-content: space-evenly;
@@ -128,6 +229,7 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
+  padding-top: 15px;
 }
 
 .card-image {
@@ -153,6 +255,19 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
 
 .dark{
   background-color: #12121296;
@@ -161,3 +276,43 @@ tr:nth-child(even) {
 .dark > a {
   color: white;
 }
+
+.dark p {
+  color: white;
+}
+
+.dark nav_button {
+  color: white;
+}
+
+.dark a {
+  color: white;
+}
+
+
+
+.dark .card_star{
+
+  color: aqua;
+}
+
+
+
+.dark .favButton{
+
+  background-color: azure;
+}
+
+.dark nav, .dark footer{
+
+  background-color:#333;
+}
+
+.dark .form_menssage{
+
+  background-color: #a49a9a96;
+}
+
+
+
+

@@ -1,34 +1,35 @@
-import React, { createContext, useState, useReducer } from 'react';
+// ThemeContext.js
+import React, { createContext, useReducer } from 'react';
+
+const initialState = {
+  theme: 'light',
+};
+
+const actionTypes = {
+  CHANGE_THEME: 'CHANGE_THEME',
+};
+
+const themeReducer = (state, action) => {
+  switch (action.type) {
+    case actionTypes.CHANGE_THEME:
+      return { ...state, theme: action.payload };
+    default:
+      return state;
+  }
+};
 
 export const ThemeContext = createContext();
 
-const ThemeContextProvider = (props) => {
+export const ThemeProvider = ({ children }) => {
+  const [state, dispatch] = useReducer(themeReducer, initialState);
 
-  
-  const [theme, setTheme] = useState('light'); // Estado inicial del tema
-
-  // Reducer para cambiar el tema
-  const themeReducer = (state, action) => {
-    switch (action.type) {
-      case 'TOGGLE_THEME':
-        return state === 'light' ? 'dark' : 'light';
-      default:
-        return state;
-    }
-  };
-
-  const [state, dispatch] = useReducer(themeReducer, theme);
-
-  // Función para cambiar el tema
-  const toggleTheme = () => {
-    dispatch({ type: 'TOGGLE_THEME' });
+  const changeTheme = (newTheme) => {
+    dispatch({ type: actionTypes.CHANGE_THEME, payload: newTheme });
   };
 
   return (
-    <ThemeContext.Provider value={{ theme: state, toggleTheme }}>
-      {props.children}
+    <ThemeContext.Provider value={{ theme: state.theme, changeTheme }}>
+      {children}
     </ThemeContext.Provider>
   );
-}
-
-export default ThemeContextProvider;
+};

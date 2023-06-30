@@ -2,14 +2,17 @@ import React from 'react'
 import dh_logo from '../images/DH.png';
 import dentistImage from '../images/doctor.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-  import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-  import { faFacebook, faInstagram, faWhatsapp, faTiktok } from '@fortawesome/free-brands-svg-icons';
-
+import  { useContext } from 'react';
+import { faFacebook, faInstagram, faWhatsapp, faTiktok } from '@fortawesome/free-brands-svg-icons';
+import {ThemeContext } from '../Components/utils/ThemeContext';
 
 
 const Footer = () => {
+
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <footer className='fo_display'>
+    <footer className={`fo_display init ${theme}`}>
         <div className='fo_display'>
           <p>Powered by</p>
           <img src={dh_logo} alt='DH-logo' />

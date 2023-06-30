@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import {ThemeContext, ThemeProvider  } from '../Components/utils/ThemeContext';
 import  { useContext } from 'react';
 //Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
@@ -28,7 +28,12 @@ const Navbar = () => {
       <Link className='nav_button' to={`/`}>Home</Link>
       <Link className='nav_button' to={`/contacto`}>Contact</Link>
       <Link className='nav_button' to={`/favs`}>Favs</Link>
-      <FontAwesomeIcon  className='nav_style' icon={faMoon} onClick={toggleTheme}/>
+      {
+        theme == 'light'?
+        <FontAwesomeIcon  className='nav_style' icon={faMoon} onClick={toggleTheme}/>
+        :
+        <FontAwesomeIcon  className='nav_style' icon={faSun} onClick={toggleTheme}/>
+      }
       </div>
     </nav>
     </div>
